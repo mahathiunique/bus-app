@@ -1,0 +1,55 @@
+import React from 'react';
+import { View, Text, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
+import { useRouter } from 'expo-router';
+
+export default function Signup() {
+  const router = useRouter();
+
+  return (
+    <View style={styles.container}>
+      <Text style={styles.title}>Create Account</Text>
+
+      <TextInput style={styles.input} placeholder="Name" />
+      <TextInput style={styles.input} placeholder="Email / Phone" />
+      <TextInput style={styles.input} placeholder="Password" secureTextEntry />
+
+      <TouchableOpacity
+        style={styles.button}
+        onPress={() => router.replace('/')}
+      >
+        <Text style={styles.buttonText}>Sign Up</Text>
+      </TouchableOpacity>
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#F4FAFF',
+    justifyContent: 'center',
+    padding: 20,
+  },
+  title: {
+    fontSize: 26,
+    fontWeight: 'bold',
+    textAlign: 'center',
+    marginBottom: 30,
+  },
+  input: {
+    backgroundColor: '#fff',
+    padding: 15,
+    borderRadius: 12,
+    marginBottom: 15,
+  },
+  button: {
+    backgroundColor: '#007AFF',
+    padding: 15,
+    borderRadius: 14,
+  },
+  buttonText: {
+    color: '#fff',
+    textAlign: 'center',
+    fontWeight: 'bold',
+  },
+});
