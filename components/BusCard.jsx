@@ -12,8 +12,15 @@ export default function BusCard({ bus, onPress }) {
         }
     };
 
-    const availableSeats = bus.totalSeats - bus.occupiedSeats;
-    const occupancyPercentage = Math.round((bus.occupiedSeats / bus.totalSeats) * 100);
+    const getStatusText = (status) => {
+        switch (status) {
+            case 'Running': return 'On Route';
+            case 'Stopped': return 'Stopped';
+            case 'In Service': return 'Available';
+            case 'Maintenance': return 'Not Available';
+            default: return status;
+        }
+    };
 
     return (
         <TouchableOpacity style={styles.card} onPress={onPress} activeOpacity={0.7}>
@@ -24,10 +31,10 @@ export default function BusCard({ bus, onPress }) {
                 </View>
                 <View style={styles.headerContent}>
                     <Text style={styles.busNumber}>{bus.number}</Text>
-                    <View style={styles.statusBadge}>
+                    <View style={[styles.statusBadge, { backgroundColor: `${getStatusColor(bus.status)}15` }]}>
                         <View style={[styles.statusDot, { backgroundColor: getStatusColor(bus.status) }]} />
                         <Text style={[styles.statusText, { color: getStatusColor(bus.status) }]}>
-                            {bus.status}
+                            {getStatusText(bus.status)}
                         </Text>
                     </View>
                 </View>
@@ -36,40 +43,14 @@ export default function BusCard({ bus, onPress }) {
 
             {/* Route Info */}
             <View style={styles.routeContainer}>
-                <Ionicons name="navigate" size={14} color="#666" />
+                <Ionicons name="navigate" size={16} color="#0ABAB5" />
                 <Text style={styles.routeText} numberOfLines={1}>{bus.route}</Text>
             </View>
 
-            {/* Stats Row */}
-            <View style={styles.statsContainer}>
-                <View style={styles.statItem}>
-                    <Ionicons name="people" size={16} color="#0ABAB5" />
-                    <Text style={styles.statText}>{availableSeats} seats</Text>
-                </View>
-                <View style={styles.statItem}>
-                    <Ionicons name="location" size={16} color="#3b82f6" />
-                    <Text style={styles.statText} numberOfLines={1}>{bus.currentLocation}</Text>
-                </View>
-                <View style={styles.statItem}>
-                    <Ionicons name="speedometer" size={16} color="#8b5cf6" />
-                    <Text style={styles.statText}>{bus.speed} km/h</Text>
-                </View>
-            </View>
-
-            {/* Occupancy Bar */}
-            <View style={styles.occupancyContainer}>
-                <View style={styles.occupancyBar}>
-                    <View
-                        style={[
-                            styles.occupancyFill,
-                            {
-                                width: `${occupancyPercentage}%`,
-                                backgroundColor: occupancyPercentage > 80 ? '#ef4444' : occupancyPercentage > 50 ? '#f59e0b' : '#10b981'
-                            }
-                        ]}
-                    />
-                </View>
-                <Text style={styles.occupancyText}>{occupancyPercentage}%</Text>
+            {/* Current Location */}
+            <View style={styles.locationContainer}>
+                <Ionicons name="location" size={16} color="#3b82f6" />
+                <Text style={styles.locationText}>Currently at: {bus.currentLocation}</Text>
             </View>
         </TouchableOpacity>
     );
@@ -108,76 +89,50 @@ const styles = StyleSheet.create({
         fontSize: 18,
         fontWeight: 'bold',
         color: '#333',
-        marginBottom: 4,
+        marginBottom: 6,
     },
     statusBadge: {
         flexDirection: 'row',
         alignItems: 'center',
+        alignSelf: 'flex-start',
+        paddingHorizontal: 10,
+        paddingVertical: 4,
+        borderRadius: 12,
     },
     statusDot: {
-        width: 6,
-        height: 6,
-        borderRadius: 3,
+        width: 8,
+        height: 8,
+        borderRadius: 4,
         marginRight: 6,
     },
     statusText: {
-        fontSize: 13,
+        fontSize: 12,
         fontWeight: '600',
     },
     routeContainer: {
         flexDirection: 'row',
         alignItems: 'center',
-        marginBottom: 12,
-        paddingVertical: 8,
+        paddingVertical: 10,
         paddingHorizontal: 12,
         backgroundColor: '#F4FAFF',
-        borderRadius: 8,
+        borderRadius: 10,
+        marginBottom: 10,
     },
     routeText: {
+        fontSize: 14,
+        color: '#333',
+        marginLeft: 8,
+        flex: 1,
+        fontWeight: '500',
+    },
+    locationContainer: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        paddingLeft: 4,
+    },
+    locationText: {
         fontSize: 13,
         color: '#666',
-        marginLeft: 6,
-        flex: 1,
-    },
-    statsContainer: {
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        marginBottom: 12,
-        paddingBottom: 12,
-        borderBottomWidth: 1,
-        borderBottomColor: '#f0f0f0',
-    },
-    statItem: {
-        flexDirection: 'row',
-        alignItems: 'center',
-        flex: 1,
-    },
-    statText: {
-        fontSize: 12,
-        color: '#666',
-        marginLeft: 4,
-    },
-    occupancyContainer: {
-        flexDirection: 'row',
-        alignItems: 'center',
-    },
-    occupancyBar: {
-        flex: 1,
-        height: 6,
-        backgroundColor: '#e0e0e0',
-        borderRadius: 3,
-        marginRight: 8,
-        overflow: 'hidden',
-    },
-    occupancyFill: {
-        height: '100%',
-        borderRadius: 3,
-    },
-    occupancyText: {
-        fontSize: 12,
-        fontWeight: '600',
-        color: '#666',
-        minWidth: 35,
-        textAlign: 'right',
+        marginLeft: 8,
     },
 });
