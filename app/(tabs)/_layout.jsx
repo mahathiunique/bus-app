@@ -1,7 +1,19 @@
 import { Ionicons } from '@expo/vector-icons';
-import { Tabs } from 'expo-router';
+import { Tabs, useRouter } from 'expo-router';
+import { TouchableOpacity } from 'react-native';
 
 export default function TabLayout() {
+    const router = useRouter();
+
+    const LogoutButton = () => (
+        <TouchableOpacity
+            onPress={() => router.replace('/')}
+            style={{ marginRight: 15 }}
+        >
+            <Ionicons name="log-out-outline" size={24} color="#000" />
+        </TouchableOpacity>
+    );
+
     return (
         <Tabs
             screenOptions={{
@@ -27,6 +39,7 @@ export default function TabLayout() {
                 headerTitleStyle: {
                     fontWeight: 'bold',
                 },
+                headerRight: () => <LogoutButton />,
             }}
         >
             <Tabs.Screen
@@ -46,7 +59,7 @@ export default function TabLayout() {
                     tabBarIcon: ({ color }) => (
                         <Ionicons name="location" size={27} color={color} />
                     ),
-                    headerTitle: 'Live Location by Bus Number',
+                    headerTitle: 'Live Location',
                 }}
             />
             <Tabs.Screen
