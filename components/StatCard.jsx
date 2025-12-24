@@ -1,7 +1,7 @@
 import { Ionicons } from '@expo/vector-icons';
 import { StyleSheet, Text, View } from 'react-native';
 
-export default function StatCard({ label, value, unit, icon, color = '#0ABAB5' }) {
+export default function StatCard({ label, value, unit, icon, color = '#FFB800' }) {
     return (
         <View style={styles.card}>
             {icon && (

@@ -83,7 +83,7 @@ export default function BusDetailScreen() {
                 {/* Driver Info */}
                 <View style={styles.driverCard}>
                     <View style={styles.driverIcon}>
-                        <Ionicons name="person" size={24} color="#0ABAB5" />
+                        <Ionicons name="person" size={24} color="#FFB800" />
                     </View>
                     <View>
                         <Text style={styles.driverLabel}>Driver</Text>
@@ -94,7 +94,7 @@ export default function BusDetailScreen() {
                 {/* Route Info */}
                 <View style={styles.routeCard}>
                     <View style={styles.routeHeader}>
-                        <Ionicons name="map" size={20} color="#0ABAB5" />
+                        <Ionicons name="map" size={20} color="#FFB800" />
                         <Text style={styles.routeTitle}>Route</Text>
                     </View>
                     <Text style={styles.routeText}>{bus.route}</Text>
@@ -120,7 +120,7 @@ export default function BusDetailScreen() {
                             {/* Route Path */}
                             <Polyline
                                 coordinates={routeCoordinates}
-                                strokeColor="#0ABAB5"
+                                strokeColor="#FFB800"
                                 strokeWidth={3}
                                 lineDashPattern={[1]}
                             />
@@ -219,7 +219,7 @@ export default function BusDetailScreen() {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#F4FAFF',
+        backgroundColor: '#FFFCF5',
     },
     scrollContainer: {
         flex: 1,
@@ -228,7 +228,7 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: '#F4FAFF',
+        backgroundColor: '#FFFCF5',
         padding: 20,
     },
     errorText: {
@@ -238,7 +238,7 @@ const styles = StyleSheet.create({
         marginBottom: 24,
     },
     backButton: {
-        backgroundColor: '#0ABAB5',
+        backgroundColor: '#FFB800',
         paddingHorizontal: 24,
         paddingVertical: 12,
         borderRadius: 8,
@@ -300,7 +300,7 @@ const styles = StyleSheet.create({
         width: 48,
         height: 48,
         borderRadius: 24,
-        backgroundColor: '#E6F9F8',
+        backgroundColor: '#FFF8E6',
         alignItems: 'center',
         justifyContent: 'center',
         marginRight: 12,
@@ -378,7 +378,7 @@ const styles = StyleSheet.create({
         height: 250,
     },
     busMarker: {
-        backgroundColor: '#0ABAB5',
+        backgroundColor: '#FFB800',
         width: 40,
         height: 40,
         borderRadius: 20,
@@ -415,7 +415,7 @@ const styles = StyleSheet.create({
     mapFallback: {
         width: '100%',
         height: 250,
-        backgroundColor: '#F4FAFF',
+        backgroundColor: '#FFFCF5',
         alignItems: 'center',
         justifyContent: 'center',
         padding: 20,

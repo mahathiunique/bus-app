@@ -99,7 +99,7 @@ export default function AllBusesScreen() {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#F4FAFF',
+        backgroundColor: '#FFFCF5',
     },
     searchContainer: {
         flexDirection: 'row',
@@ -137,8 +137,8 @@ const styles = StyleSheet.create({
         borderColor: '#e0e0e0',
     },
     filterButtonActive: {
-        backgroundColor: '#0ABAB5',
-        borderColor: '#0ABAB5',
+        backgroundColor: '#FFB800',
+        borderColor: '#FFB800',
     },
     filterText: {
         fontSize: 13,
@@ -146,7 +146,7 @@ const styles = StyleSheet.create({
         fontWeight: '600',
     },
     filterTextActive: {
-        color: '#fff',
+        color: '#000',
     },
     listContent: {
         padding: 15,

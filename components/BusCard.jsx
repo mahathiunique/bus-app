@@ -27,7 +27,7 @@ export default function BusCard({ bus, onPress }) {
             {/* Header */}
             <View style={styles.header}>
                 <View style={styles.busIconContainer}>
-                    <Ionicons name="bus" size={24} color="#0ABAB5" />
+                    <Ionicons name="bus" size={24} color="#FFB800" />
                 </View>
                 <View style={styles.headerContent}>
                     <Text style={styles.busNumber}>{bus.number}</Text>
@@ -43,13 +43,13 @@ export default function BusCard({ bus, onPress }) {
 
             {/* Route Info */}
             <View style={styles.routeContainer}>
-                <Ionicons name="navigate" size={16} color="#0ABAB5" />
+                <Ionicons name="navigate" size={16} color="#FFB800" />
                 <Text style={styles.routeText} numberOfLines={1}>{bus.route}</Text>
             </View>
 
             {/* Current Location */}
             <View style={styles.locationContainer}>
-                <Ionicons name="location" size={16} color="#3b82f6" />
+                <Ionicons name="location" size={16} color="#666" />
                 <Text style={styles.locationText}>Currently at: {bus.currentLocation}</Text>
             </View>
         </TouchableOpacity>
@@ -60,13 +60,10 @@ const styles = StyleSheet.create({
     card: {
         backgroundColor: '#fff',
         padding: 16,
-        borderRadius: 16,
+        borderRadius: 12,
         marginBottom: 12,
-        elevation: 3,
-        shadowColor: '#000',
-        shadowOffset: { width: 0, height: 2 },
-        shadowOpacity: 0.1,
-        shadowRadius: 8,
+        borderWidth: 1,
+        borderColor: '#e0e0e0',
     },
     header: {
         flexDirection: 'row',
@@ -77,7 +74,7 @@ const styles = StyleSheet.create({
         width: 48,
         height: 48,
         borderRadius: 24,
-        backgroundColor: '#E6F9F8',
+        backgroundColor: '#FFF8E6',
         alignItems: 'center',
         justifyContent: 'center',
         marginRight: 12,
@@ -88,7 +85,7 @@ const styles = StyleSheet.create({
     busNumber: {
         fontSize: 18,
         fontWeight: 'bold',
-        color: '#333',
+        color: '#000',
         marginBottom: 6,
     },
     statusBadge: {
@@ -114,13 +111,13 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         paddingVertical: 10,
         paddingHorizontal: 12,
-        backgroundColor: '#F4FAFF',
+        backgroundColor: '#FFF8E6',
         borderRadius: 10,
         marginBottom: 10,
     },
     routeText: {
         fontSize: 14,
-        color: '#333',
+        color: '#000',
         marginLeft: 8,
         flex: 1,
         fontWeight: '500',

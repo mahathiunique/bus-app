@@ -26,7 +26,7 @@ export default function Signup() {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#F4FAFF',
+        backgroundColor: '#FFFCF5',
         justifyContent: 'center',
         padding: 20,
     },
@@ -41,14 +41,18 @@ const styles = StyleSheet.create({
         padding: 15,
         borderRadius: 12,
         marginBottom: 15,
+        borderWidth: 1,
+        borderColor: '#e0e0e0',
     },
     button: {
-        backgroundColor: '#007AFF',
+        backgroundColor: '#FFB800',
         padding: 15,
-        borderRadius: 14,
+        borderRadius: 12,
+        borderWidth: 1,
+        borderColor: '#000',
     },
     buttonText: {
-        color: '#fff',
+        color: '#000',
         textAlign: 'center',
         fontWeight: 'bold',
     },

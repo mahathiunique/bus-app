@@ -12,7 +12,7 @@ export default function ProfileScreen() {
             icon: 'person-outline',
             title: 'Personal Information',
             subtitle: 'Update your details',
-            color: '#0ABAB5',
+            color: '#FFB800',
         },
         {
             id: 2,
@@ -72,7 +72,7 @@ export default function ProfileScreen() {
                 {/* Stats Cards */}
                 <View style={styles.statsContainer}>
                     <View style={styles.statCard}>
-                        <Ionicons name="calendar" size={24} color="#0ABAB5" />
+                        <Ionicons name="calendar" size={24} color="#FFB800" />
                         <Text style={styles.statValue}>45</Text>
                         <Text style={styles.statLabel}>Trips This Month</Text>
                     </View>
@@ -122,7 +122,7 @@ export default function ProfileScreen() {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#F4FAFF',
+        backgroundColor: '#FFFCF5',
     },
     scrollContainer: {
         flex: 1,
@@ -143,7 +143,7 @@ const styles = StyleSheet.create({
         width: 100,
         height: 100,
         borderRadius: 50,
-        backgroundColor: '#0ABAB5',
+        backgroundColor: '#FFB800',
         alignItems: 'center',
         justifyContent: 'center',
         borderWidth: 4,
@@ -158,7 +158,7 @@ const styles = StyleSheet.create({
         position: 'absolute',
         bottom: 0,
         right: 0,
-        backgroundColor: '#0ABAB5',
+        backgroundColor: '#FFB800',
         width: 32,
         height: 32,
         borderRadius: 16,

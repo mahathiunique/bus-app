@@ -137,7 +137,7 @@ export default function LiveLocationScreen() {
                                     onPress={() => router.push(`/bus/${selectedBus.id}`)}
                                 >
                                     <Text style={styles.viewDetailsText}>View Details</Text>
-                                    <Ionicons name="arrow-forward" size={16} color="#0ABAB5" />
+                                    <Ionicons name="arrow-forward" size={16} color="#FFB800" />
                                 </TouchableOpacity>
                             </View>
 
@@ -236,7 +236,7 @@ export default function LiveLocationScreen() {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#F4FAFF',
+        backgroundColor: '#FFFCF5',
     },
     searchSection: {
         backgroundColor: '#fff',
@@ -257,7 +257,7 @@ const styles = StyleSheet.create({
         flex: 1,
         flexDirection: 'row',
         alignItems: 'center',
-        backgroundColor: '#F4FAFF',
+        backgroundColor: '#FFFCF5',
         borderRadius: 12,
         paddingHorizontal: 12,
     },
@@ -270,7 +270,7 @@ const styles = StyleSheet.create({
         fontSize: 16,
     },
     searchButton: {
-        backgroundColor: '#0ABAB5',
+        backgroundColor: '#FFB800',
         width: 48,
         height: 48,
         borderRadius: 12,
@@ -313,7 +313,7 @@ const styles = StyleSheet.create({
         borderColor: '#e0e0e0',
     },
     quickAccessText: {
-        color: '#0ABAB5',
+        color: '#FFB800',
         fontWeight: '600',
     },
     busInfoCard: {
@@ -363,10 +363,10 @@ const styles = StyleSheet.create({
         paddingVertical: 6,
         paddingHorizontal: 12,
         borderRadius: 6,
-        backgroundColor: '#E6F9F8',
+        backgroundColor: '#FFF8E6',
     },
     viewDetailsText: {
-        color: '#0ABAB5',
+        color: '#FFB800',
         fontWeight: '600',
         marginRight: 4,
         fontSize: 13,
@@ -388,7 +388,7 @@ const styles = StyleSheet.create({
     },
     statBox: {
         flex: 1,
-        backgroundColor: '#F4FAFF',
+        backgroundColor: '#FFFCF5',
         padding: 12,
         borderRadius: 8,
     },
@@ -426,7 +426,7 @@ const styles = StyleSheet.create({
         height: 300,
     },
     busMarker: {
-        backgroundColor: '#0ABAB5',
+        backgroundColor: '#FFB800',
         width: 40,
         height: 40,
         borderRadius: 20,
@@ -454,7 +454,7 @@ const styles = StyleSheet.create({
     },
     mapFallback: {
         height: 300,
-        backgroundColor: '#F4FAFF',
+        backgroundColor: '#FFFCF5',
         alignItems: 'center',
         justifyContent: 'center',
         padding: 20,

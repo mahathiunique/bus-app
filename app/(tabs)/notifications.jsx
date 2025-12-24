@@ -12,7 +12,7 @@ const notifications = [
         time: '2 min ago',
         read: false,
         icon: 'notifications',
-        color: '#0ABAB5',
+        color: '#FFB800',
     },
     {
         id: 2,
@@ -112,7 +112,7 @@ export default function NotificationsScreen() {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#F4FAFF',
+        backgroundColor: '#FFFCF5',
     },
     header: {
         flexDirection: 'row',
@@ -132,7 +132,7 @@ const styles = StyleSheet.create({
         shadowRadius: 4,
     },
     unreadCard: {
-        backgroundColor: '#0ABAB5',
+        backgroundColor: '#FFB800',
     },
     statValue: {
         fontSize: 32,
@@ -164,7 +164,7 @@ const styles = StyleSheet.create({
     },
     unreadNotification: {
         borderLeftWidth: 4,
-        borderLeftColor: '#0ABAB5',
+        borderLeftColor: '#FFB800',
     },
     iconContainer: {
         width: 48,
@@ -193,7 +193,7 @@ const styles = StyleSheet.create({
         width: 8,
         height: 8,
         borderRadius: 4,
-        backgroundColor: '#0ABAB5',
+        backgroundColor: '#FFB800',
         marginLeft: 8,
     },
     notificationMessage: {
